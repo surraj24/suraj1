@@ -32,14 +32,14 @@ def makeWebhookResult(req):
         return {}
     result = req.get("result")
     parameters = result.get("parameters")
-    _id = parameters.get("user-id")
-	_pass1 = parameters.get("password")
+    id1 = parameters.get("user-id")
+	pass1 = parameters.get("password")
 
    
- cost = {'Suraj':111, 'Shubham':222, 'Ravi':333, 'Yash':444, 'Raju':555, 'Krishna':666, 'Ravibhushan':777}
+cost = {'Suraj':111, 'Shubham':222, 'Ravi':333, 'Yash':444, 'Raju':555, 'Krishna':666, 'Ravibhushan':777}
 
   
-if(str(cost[_id])==_pass1):
+if(str(cost[id1])==pass1):
   speech = "Succesfull Login"
 else:
  speech = "Wrong Credential"
