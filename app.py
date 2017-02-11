@@ -14,40 +14,37 @@ app = Flask(__name__)
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
-    req = request.get_json(silent=True, force=True)
+    	req = request.get_json(silent=True, force=True)
 
-    print("Request:")
-    print(json.dumps(req, indent=4))
+ 	   print("Request:")
+print(json.dumps(req, indent=4))
 
     res = makeWebhookResult(req)
-
-    res = json.dumps(res, indent=4)
-    print(res)
-    r = make_response(res)
-    r.headers['Content-Type'] = 'application/json'
-    return r
+	res = json.dumps(res, indent=4)
+        print(res)
+        r = make_response(res)
+         r.headers['Content-Type'] = 'application/json'
+        return r
 
 def makeWebhookResult(req):
-    if req.get("result").get("action") != "user.id":
+        if req.get("result").get("action") != "user.id":
         return {}
     result = req.get("result")
-    parameters = result.get("parameters")
-    id1 = parameters.get("user-id")
+        parameters = result.get("parameters")
+         id1 = parameters.get("user-id")
 	pass1 = parameters.get("password")
 
-   
- cost = {'Suraj':111, 'Shubham':222, 'Ravi':333, 'Yash':444, 'Raju':555, 'Krishna':666, 'Ravibhushan':777}
+          cost = {'Suraj':111, 'Shubham':222, 'Ravi':333, 'Yash':444, 'Raju':555, 'Krishna':666, 'Ravibhushan':777}
 
-  
-if(str(cost[id1])==pass1):
-  speech = "Succesfull Login"
-else:
- speech = "Wrong Credential"
+        if(str(cost[id1])==pass1):
+        speech = "Succesfull Login"
+         else:
+        speech = "Wrong Credential"
 
-  print("Response:")
-    print(speech)
+        print("Response:")
+        print(speech)
 
-    return {
+	    return {
         "speech": speech,
         "displayText": speech,
         #"data": {},
@@ -57,8 +54,8 @@ else:
 
 
 if __name__ == '__main__':
-    port = int(os.getenv('PORT', 5000))
+   	 port = int(os.getenv('PORT', 5000))
 
-    print "Starting app on port %d" % port
+ 		   print "Starting app on port %d" % port
 
-    app.run(debug=True, port=port, host='0.0.0.0')
+   			 app.run(debug=True, port=port, host='0.0.0.0')
