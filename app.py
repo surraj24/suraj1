@@ -36,7 +36,7 @@ def makeWebhookResult(req):
 	pass1 = parameters.get("password")
 
    
-cost = {'Suraj':111, 'Shubham':222, 'Ravi':333, 'Yash':444, 'Raju':555, 'Krishna':666, 'Ravibhushan':777}
+ cost = {'Suraj':111, 'Shubham':222, 'Ravi':333, 'Yash':444, 'Raju':555, 'Krishna':666, 'Ravibhushan':777}
 
   
 if(str(cost[id1])==pass1):
